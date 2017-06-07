@@ -1,13 +1,18 @@
-const path = require('path');
+const path = require('path')
 const express = require('express')
-const favicon = require('serve-favicon')
 const app = express()
+const favicon = require('serve-favicon')
+const logger = require('morgan')
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+
 const port = '3001'
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
+
 const index = require('./routes/index');
 const users = require('./routes/users');
+
+
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favipig.ico')));    // loading all static files in /public
