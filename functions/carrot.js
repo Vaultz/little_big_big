@@ -3,7 +3,7 @@ var fCarrot = {
     getCarrot: function(carrots) {
         setTimeout(function() {
             carrots++;
-            console.log(carrots);
+            // console.log(carrots);
             fCarrot.getCarrot(carrots);
         }, 1000);
     }
