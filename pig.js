@@ -2,16 +2,17 @@ const path = require('path')
 const favicon = require('serve-favicon')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
 const port = '3001'
+
 
 const express = require('express')
 const app = express()
 const server = require('http').createServer(app)
 const io = require('socket.io').listen(server)
 
-const index = require('./routes/index');
-const users = require('./routes/users');
-
+const index = require('./routes/index')
+const users = require('./routes/users')
 
 
 // uncomment after placing your favicon in /public
@@ -48,9 +49,6 @@ app.use(bodyParser.json())
   res.render('error');
 })
 
-
-// app.listen(port, function () {  // DEBUG=little_big_pig:* npm start
-// })
 
 server.listen(port, function() {
       console.log('Now listening on pork '+port+'!')
